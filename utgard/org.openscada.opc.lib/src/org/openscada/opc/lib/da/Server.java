@@ -468,4 +468,17 @@ public class Server
             this.groups.remove ( group.getServerHandle () );
         }
     }
+    /**
+     *  use browser().queryOrganization() to use method getTreeBrowser() or getFlatBrowser()
+     *
+     * @return
+     * @throws JIException
+     * @throws UnknownHostException
+     */
+    public OPCBrowseServerAddressSpace getBrowser(){
+        if(server==null){
+            throw new NullPointerException("OpcServer is not Connected");
+        }
+        return this.server.getBrowser();
+    }
 }
